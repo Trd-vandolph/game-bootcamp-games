@@ -42,7 +42,8 @@ SineEnemy = enchant.Class.create(Enemy, {
     initialize: function() {
         Enemy.call(this);
         this.addEventListener('enterframe', function() {
-            this.x += Math.sin(this.age / 10);
+            this.x += Math.sin(this.age / 20);
+            //alert(this.age);
         });
     }
 });
@@ -70,6 +71,7 @@ Bullet = enchant.Class.create(Sprite, {
 window.onload = function() {
     var game = new Game(320, 320);
     game.preload('chara1.png', 'icon0.png');
+    game.scale = 1;
     game.onload = function() {
         var info = new Label('');
         game.rootScene.addChild(info);
