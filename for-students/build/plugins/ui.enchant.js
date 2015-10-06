@@ -59,22 +59,22 @@ enchant.ui.Pad = enchant.Class.create(enchant.Sprite, {
      * @constructs
      * @extends enchant.Sprite
      */
-    initialize: function() {
-        var core = enchant.Core.instance;
-        var image = core.assets['pad.png'];
-        enchant.Sprite.call(this, image.width / 2, image.height);
-        this.image = image;
-        this.input = { left: false, right: false, up: false, down: false };
-        this.addEventListener('touchstart', function(e) {
-            this._updateInput(this._detectInput(e.localX, e.localY));
-        });
-        this.addEventListener('touchmove', function(e) {
-            this._updateInput(this._detectInput(e.localX, e.localY));
-        });
-        this.addEventListener('touchend', function(e) {
-            this._updateInput({ left: false, right: false, up: false, down: false });
-        });
-    },
+    // initialize: function() {
+    //     var core = enchant.Core.instance;
+    //     var image = core.assets['pad.png'];
+    //     enchant.Sprite.call(this, image.width / 2, image.height);
+    //     this.image = image;
+    //     this.input = { left: false, right: false, up: false, down: false };
+    //     this.addEventListener('touchstart', function(e) {
+    //         this._updateInput(this._detectInput(e.localX, e.localY));
+    //     });
+    //     this.addEventListener('touchmove', function(e) {
+    //         this._updateInput(this._detectInput(e.localX, e.localY));
+    //     });
+    //     this.addEventListener('touchend', function(e) {
+    //         this._updateInput({ left: false, right: false, up: false, down: false });
+    //     });
+    // },
     _detectInput: function(x, y) {
         x -= this.width / 2;
         y -= this.height / 2;
